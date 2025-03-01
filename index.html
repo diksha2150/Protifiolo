@@ -553,6 +553,60 @@
         <div class="mt-8 text-center">
             <button class="rounded-sm bg-green-500 px-6 py-2 font-bold text-white hover:bg-green-700">View All</button>
         </div>
+      </div>
+    
+      <div class="container mx-auto py-12 px-4 bg-pattern">
+        <div class="text-center mb-10">
+            <span class="bg-green-50 text-green-600 text-sm px-8 py-2">CONTACT ME</span>
+            <h2 class="text-3xl font-bold text-gray-800 my-4">Send Me A Message</h2>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="max-w-3xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <input type="text" id="name" placeholder="Name"
+                        class="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                </div>
+                <div>
+                    <input type="email" id="email" placeholder="Email"
+                        class="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <input type="tel" id="phone" placeholder="phone#"
+                        class="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <div class="relative">
+                        <select id="budget"
+                            class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-4 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <option>$500 - $1000</option>
+                            <option>$1000 - $2000</option>
+                            <option>$2000+</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="mt-6">
+                <textarea id="message" rows="5" placeholder="Message"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+        
+            <div class="text-center mt-8">
+                <button type="submit"
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-7 rounded-sm focus:outline-none focus:shadow-outline">
+                    Send Message
+                </button>
+            </div>
+        </form>
+        </div>
+
     </div>
 
     <!-- *************footer******* -->
