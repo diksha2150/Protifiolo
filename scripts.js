@@ -11,21 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const animateCircle = (circleElement) => {
     const percentage = parseInt(circleElement.dataset.percentage);
-    const textElement = circleElement.querySelector(".circle-text div:first-child");
-    const progressCircle = circleElement.querySelector("circle:nth-of-type(2)"); 
+    const textElement = circleElement.querySelector(
+      ".circle-text div:first-child"
+    );
+    const progressCircle = circleElement.querySelector("circle:nth-of-type(2)");
 
     let current = 0;
     const duration = 1000;
     const intervalTime = duration / percentage;
-    const step = 314 / 100; 
+    const step = 314 / 100;
 
     const animate = setInterval(() => {
       if (current >= percentage) {
         clearInterval(animate);
       } else {
         current++;
-        textElement.textContent = `${current}%`; 
-        progressCircle.style.strokeDashoffset = 314 - step * current; 
+        textElement.textContent = `${current}%`;
+        progressCircle.style.strokeDashoffset = 314 - step * current;
       }
     }, intervalTime);
   };
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           animateCircle(entry.target);
-          observer.unobserve(entry.target); 
+          observer.unobserve(entry.target);
         }
       });
     },
@@ -49,35 +51,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const skills = document.querySelectorAll(".skill");
 
   const animateSkill = (skill) => {
-      const counter = skill.querySelector(".counter");
-      const progressBar = skill.querySelector(".progress");
-      const percent = parseInt(skill.getAttribute("data-percent"));
+    const counter = skill.querySelector(".counter");
+    const progressBar = skill.querySelector(".progress");
+    const percent = parseInt(skill.getAttribute("data-percent"));
 
-      let current = 0;
-      const step = percent / 50; // Adjust for smooth animation
+    let current = 0;
+    const step = percent / 50; // Adjust for smooth animation
 
-      const updateCounter = () => {
-          if (current < percent) {
-              current += step;
-              counter.innerText = `${Math.min(Math.floor(current), percent)}%`;
-              progressBar.style.width = `${Math.min(current, percent)}%`;
-              requestAnimationFrame(updateCounter);
-          }
-      };
+    const updateCounter = () => {
+      if (current < percent) {
+        current += step;
+        counter.innerText = `${Math.min(Math.floor(current), percent)}%`;
+        progressBar.style.width = `${Math.min(current, percent)}%`;
+        requestAnimationFrame(updateCounter);
+      }
+    };
 
-      updateCounter();
+    updateCounter();
   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
       entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-              animateSkill(entry.target);
-              observer.unobserve(entry.target);
-          }
+        if (entry.isIntersecting) {
+          animateSkill(entry.target);
+          observer.unobserve(entry.target);
+        }
       });
-  }, { threshold: 0.5 });
+    },
+    { threshold: 0.5 }
+  );
 
-  skills.forEach(skill => observer.observe(skill));
+  skills.forEach((skill) => observer.observe(skill));
 });
 // ---------------------------------------------------------------------------------
 
@@ -127,3 +132,34 @@ topBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+// ----------------------------------------corousle-------------------------------
+const slides = document.querySelectorAll(".carousel-slide");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Initial display
+showSlide(currentSlide);
+
+// Event Listeners
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+// Optional: Auto-advance the carousel
+// setInterval(nextSlide, 5000); // Change slide every 5 seconds
