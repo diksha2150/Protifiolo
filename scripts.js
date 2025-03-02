@@ -1,3 +1,17 @@
+
+const hamburgerButton = document.getElementById('hamburger-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburgerButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+
+
+
+
+// ---------------------------------------------------------------------------------
+
 const categoryButtons = document.querySelectorAll(".category-btn");
 const portfolioItems = document.querySelectorAll(".portfolio-item");
 

@@ -10,36 +10,82 @@
 </head>
 
 <body>
-    <header class="px-50 py-4 max-w-[1440]  ">
-        <div class="container mx-auto flex items-center border-none justify-between ">
-            <div class="flex items-center justify-between gap-30">
-                <a href="#" class="text-[49px] font-bold text-[#151D41]">
-                    Port<sapn class="text-green-500">
+    <header class="px-6 py-4 max-w-[1440px] mx-auto relative">
+        <div class="container mx-auto flex items-center justify-between border-none">
+            <div class="flex items-center justify-between gap-8 md:gap-12">
+                <a href="#" class="text-3xl md:text-5xl font-bold text-[#151D41] whitespace-nowrap">
+                    Port
+                    <span class="bg-green-500 text-white pl-2">
                         folio
-                    </sapn>
+                    </span>
                 </a>
-                <ul class="flex space-x-12">
+
+                <ul class="hidden md:flex space-x-6 lg:space-x-12">
                     <li class="menu-item">
-                        <a href="#" class="text-[#151D41] text-base">Home</a>
+                        <a href="#"
+                            class="text-[#151D41] text-base hover:text-green-500 transition-colors duration-200">Home</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="text-[#151D41] text-base">About</a>
+                        <a href="#"
+                            class="text-[#151D41] text-base hover:text-green-500 transition-colors duration-200">About</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="text-[#151D41] text-base">Portfolio</a>
+                        <a href="#"
+                            class="text-[#151D41] text-base hover:text-green-500 transition-colors duration-200">Portfolio</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="text-[#151D41] text-base">Blog</a>
+                        <a href="#"
+                            class="text-[#151D41] text-base hover:text-green-500 transition-colors duration-200">Blog</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="text-[#151D41] text-base">contact us</a>
+                        <a href="#"
+                            class="text-[#151D41] text-base hover:text-green-500 transition-colors duration-200">Contact
+                            Us</a>
                     </li>
                 </ul>
             </div>
-            <div class="btn--otr">
-                <a href="#" class="bg-white text-[#0FBF61] font-bold py-2 px-4 rounded">Hire me!</a>
-            </div>
 
+            <div class="btn--otr">
+                <a href="#"
+                    class="hidden md:block bg-white text-[#0FBF61] font-bold py-2 px-4 rounded hover:bg-green-100 transition-colors duration-200">Hire
+                    me!</a>
+            </div>
+            <button id="hamburger-button" class="md:hidden focus:outline-none md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Initially Hidden) -->
+        <div id="mobile-menu"
+            class="absolute top-full left-0 w-full bg-white shadow-md rounded-b-md py-4 px-4 block hidden z-10">
+            <ul>
+                <li class="menu-item py-2">
+                    <a href="#"
+                        class="text-gray-900 text-base font-medium hover:text-green-500 hover:bg-gray-100 transition-colors duration-200 block">Home</a>
+                </li>
+                <li class="menu-item py-2">
+                    <a href="#"
+                        class="text-gray-900 text-base font-medium hover:text-green-500 hover:bg-gray-100 transition-colors duration-200 block">About</a>
+                </li>
+                <li class="menu-item py-2">
+                    <a href="#"
+                        class="text-gray-900 text-base font-medium hover:text-green-500 hover:bg-gray-100 transition-colors duration-200 block">Portfolio</a>
+                </li>
+                <li class="menu-item py-2 ">
+                    <a href="#"
+                        class="text-gray-900 text-base font-medium hover:text-green-500 hover:bg-gray-100 transition-colors duration-200 block">Blog</a>
+                </li>
+                <li class="menu-item py-2">
+                    <a href="#"
+                        class="text-gray-900 text-base font-medium hover:text-green-500 hover:bg-gray-100 transition-colors duration-200 block">Contact
+                        Us</a>
+                </li>
+            </ul>
+        </div>
     </header>
 
     <!-- **********************About me*********** -->
